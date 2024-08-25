@@ -36,5 +36,5 @@ class Var(object):
     else:
         URL = "http://muddy-elsey-filestorebott-9bbd5f97.koyeb.app/".format(FQDN)
     DATABASE_URL = str(getenv('DATABASE_URL', ''))
-    UPDATES_CHANNEL = str(getenv('UPDATES_CHANNEL', 'RahulReviewsYT'))
+    UPDATES_CHANNEL = str(getenv('UPDATES_CHANNEL', 'Movie_loverzz))
     BANNED_CHANNELS = list(set(int(x) for x in str(getenv("BANNED_CHANNELS", "")).split()))
