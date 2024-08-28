@@ -1,125 +1,659 @@
-<!-- Code by fyaz05 -->
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta property="og:image" content="https://cdn.jsdelivr.net/gh/fyaz05/Resources@main/HydroStreamerBot/live.png">
+    <link rel="icon" href="https://i.ibb.co/ncgZ7Wt/LCU-BOTS.png">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta content="LCU BOTS ONLINE STREAMING" property="og:description">
+    <meta property="og:image" content="https://i.ibb.co/ncgZ7Wt/LCU-BOTS.png" itemprop="thumbnailUrl">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
     <title>%s</title>
-    <link rel="icon" href="https://cdn.jsdelivr.net/gh/fyaz05/Resources@main/HydroStreamerBot/Thunder.jpg" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fyaz05/Resources@main/HydroStreamerBot/reqStyles.css">
-<body>
-    <div class="container">
-        <header>
-            <h1 id="file-name">%s</h1>
-        </header>
-        <div class="player-container">
-            <div class="video-wrapper">
-                <video class="plyr" controls poster="https://cdn.jsdelivr.net/gh/fyaz05/Resources@main/HydroStreamerBot/videobg.jpg" alt="Video Player Poster Image">
-                    <source src="%s" type="video/mp4" alt="Video Source">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-        </div>
-      
-        <div class="controls">
-            <div class="dropdown">
-                <button class="btn">
-                    <i class="fas fa-play-circle"></i> Stream
-                </button>
-                <div class="dropdown-content">
-                    <a href="#" onclick="playOnline('vlc')">
-                        <img src="https://cdn.jsdelivr.net/gh/fyaz05/Resources@main/HydroStreamerBot/vlc.png" alt="VLC Mobile" class="player-logo"> VLC Mobile
-                    </a>
-                    <a href="#" onclick="playOnline('mxp')">
-                        <img src="https://cdn.jsdelivr.net/gh/fyaz05/Resources@main/HydroStreamerBot/mx.png" alt="MX Player Pro" class="player-logo"> MX Player Pro
-                    </a>
-                    <a href="#" onclick="playOnline('mx')">
-                        <img src="https://cdn.jsdelivr.net/gh/fyaz05/Resources@main/HydroStreamerBot/mx.png" alt="MX Player" class="player-logo"> MX Player
-                    </a>
-                    <a href="#" onclick="playOnline('np')">
-                        <img src="https://cdn.jsdelivr.net/gh/fyaz05/Resources@main/HydroStreamerBot/nPlayer.webp" alt="nPlayer" class="player-logo"> nPlayer
-                    </a>
-                    <a href="#" onclick="playOnline('sp')">
-                        <img src="https://cdn.jsdelivr.net/gh/fyaz05/Resources@main/HydroStreamerBot/splayer.webp" alt="S Player" class="player-logo"> S Player
-                    </a>
-                    <a href="#" onclick="playOnline('km')">
-                        <img src="https://cdn.jsdelivr.net/gh/fyaz05/Resources@main/HydroStreamerBot/km.webp" alt="KM Player" class="player-logo"> KM Player
-                    </a>
-                </div>
-            </div>
-            <button class="btn download" onclick="download()">
-                <i class="fas fa-cloud-download-alt"></i> Download
-            </button>
-            <button class="btn copy-link" onclick="copyLink()">
-                <i class="fas fa-link"></i> Copy Link
-            </button>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script type="module" src="https://injectshrslinkblog.com/popup/script.js"> </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://vjs.zencdn.net/8.6.1/video-js.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "nln9zl9kd3");
+</script>
+<style>
+    body {
+        font-family: sans-serif;
+        font-size: 16px;
+        margin: 0;
+        padding: 0;
+        color: #fff;
+    }
+    
+    @media (max-width: 600px) {
+      main {
+        padding: 10px;
+      }
+    }
+
+    .background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('https://i.postimg.cc/T2mcBGtv/pxfuel-2.jpg'); 
+        background-size: cover;
+        background-position: center;
+        filter: brightness(40%); 
+        z-index: -1;
+    }
+
+    #banner {
+        position: relative;
+        height: 55px;
+        color: #ffffff;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 20px;
+    }
+
+    .left-content {
+        flex: 1;
+        text-align: center;
+    }
+
+    .black-text {
+        color: white;
+    }
+
+    .right-content {
+        margin-left: 20px;
+    }
+
+    .button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #ff9b05;
+        color: white;
+        text-decoration: none;
+    }
+
+    .button:hover {
+      box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    }
+
+
+    #player-container {
+        margin: 1px;
+    }
+
+    .containerbox {
+        overflow: hidden;
+        *zoom: 1;
+        margin: 0 10px;
+    }
+
+    .site-content {
+        padding: 20px;
+    }
+    
+    .playercontainerbox {
+      padding: 1px;
+      box-shadow: 0px 0px 10px grey;
+      border-radius: 2px;
+      overflow-wrap: break-word;
+      border: 2px solid #3FCCF1;
+    }
+
+    #text {
+        margin: 20px;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    
+    .dropdown-toggle {
+        background-color: #3498db;
+        color: #fff;
+        border: 1px solid #2980b9;
+        padding: 10px;
+        cursor: pointer;
+    }
+    
+    .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%; 
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        border: 1px solid #3498db;
+        background-color: #fff;
+        display: none;
+    }
+
+    .dropdown-menu li {
+        list-style: none;
+    }
+
+    .dropdown-menu li a {
+        display: block;
+        padding: 10px;
+        text-decoration: none;
+        color: #333;
+    }
+
+    .dropdown-menu li a:hover {
+        background-color: #3498db;
+        color: #fff;
+    }
+    
+
+    #button-container1 {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
+    #button-container1 button {
+        flex: 1 0 auto;
+        height: 40px;
+        padding: 0 20px;
+        margin: 5px;
+        font-size: 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: box-shadow 0.3s, background-color 0.3s, color 0.3s;
+    }
+
+    #button-container1 button:hover {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    #button-container1 button#vlc-btn,
+    #button-container1 button#pi-btn,
+    #button-container1 button#sp-btn,
+    #button-container1 button#mx-btn {
+        background-color: Lavender; 
+        color: #ffffff; 
+    }
+
+    #button-container2 button#dl-btn,
+    #button-container2 button#share-btn,
+    #button-container2 button#tgfile-btn,
+    #button-container2 button#tg-btn {
+        color: white;
+      	padding: 10px 20px;
+      	border: none;
+      	border-radius: 5px;
+      	cursor: pointer;
+      	background: linear-gradient(to right, #21D5FC, #E521FC);
+      	transition: background 2s ease;
+    }
+
+    #button-container2 {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    #button-container2 button {
+        height: 40px;
+        padding: 0 20px;
+        margin: 5px;
+        font-size: 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: box-shadow 0.3s, background-color 0.3s, color 0.3s;
+    }
+
+    #button-container2 button:hover {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 9999;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background-color: rgba(0, 0, 0, 0.5);
+        justify-content: center;
+        align-items: center;
+    }
+        
+    .modal-content {
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        width: 300px;
+        text-align: center;
+        position: relative;
+        animation: fadeIn 0.5s;
+    }
+        
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+    .circle-loader {
+        width: 50px;
+        height: 50px;
+        border: 6px solid #f3f3f3;
+        border-top: 6px solid #3498db;
+        border-radius: 50%;
+        animation: spin 3s linear infinite;
+        margin: 0 auto;
+    }
+
+    @keyframes spin {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    .modal-text {
+        margin-top: 10px;
+        font-size: 18px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .file-details-card {
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        border-radius: 12px; 
+        background-color: rgba(255, 255, 255, 0.5); 
+        color: #fff; 
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(1px); 
+        padding: 10px; 
+        word-break: break-word; 
+    }
+
+    .title {
+        margin-bottom: 8px; 
+        font-size: 1.25rem; 
+        font-weight: 600;
+        color: #fff; 
+    }
+
+    .details {
+        font-size: 1.2rem; 
+        font-weight: 600;
+        color: inherit; 
+        word-break: break-word; 
+    }
+
+    .details span {
+        display: inline-block;
+        margin-right: 4px; 
+    }
+
+    .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .adc {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #mx-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        padding: 0 20px;
+        margin: 5px;
+        font-size: 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: box-shadow 0.3s, background-color 0.3s, color 0.3s;
+        background-color: #f0f0f0; 
+        color: #000000; 
+    }
+    
+    #op-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40px;
+        padding: 0 20px;
+        margin: 5px;
+        font-size: 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        color: Black;
+        transition: box-shadow 0.3s, background-color 0.3s, color 0.3s;
+        background-color: #f0f0f0; 
+        color: #000000; 
+    }
+
+    #mx-btn svg {
+        width: 20px;
+        height: 20px; 
+        margin-right: 5px; 
+    }
+
+    #vlc-btn:hover,
+    #mx-btn:hover {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    #dl-btn:hover,
+    #share-btn:hover,
+    #tgfile-btn:hover,
+    #tg-btn:hover {
+        background: linear-gradient(to left, #E521FC, #21D5FC);
+    	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+</style>    
+</head>
+<body> 
+<div class="background"></div>
+<div id="banner">
+    <div class="left-content">
+        <span class="black-text">MOVIE LOVERZ - Free Online Streaming</span>
+    </div>
+</div>
+<div style="margin-bottom: 5px; margin-top: 5px"></div>
+<div class="site-content"> 
+    <div class="playercontainerbox"> 
+        <video id="player" class="video-js">
+            <source src="">
+        </video>
+    </div>
+    <div style="margin-bottom: 3px; margin-top: 3px"></div>
+    <div class="file-details-card">
+        <div class="content">
+            <h5 class="title">
+                File Details :
+            </h5>
+            <p class="details">
+                ➤ Name : <span id="file-name"></span><br>
+                ➤ Size : <span id="file-size"></span>
+            </p>
         </div>
     </div>
-    <footer>
-        <!-- Replace the below link with your link -->
-        <a href="https://telegram.me/movie_loverzz" target="_blank">
-            <i class="fab fa-telegram-plane"></i> Join our Telegram channel
-        </a>
-        <div class="justify-content-center align-items-center w-100 d-flex mb-3">
-                <div class="row d-flex w-100 justify-content-center align-items-center">
-                    <div class="col-lg-5 col-10  py-2 text-center bg-success text-light rounded-4 text-sm wow animate__animated animate__FadeIn">
-                        Please Share our Bot to your Friend's 😀🙏...
-                    </div>
-                </div>
-	    </div>
-        <details>
-              <summary><b>Disclaimer</b></summary>
-              <br /> This website only provide service that help you play your video online without downloading. <br /> This website does not give you a storage/dissemination function. You can report the video that contains a problem like copyright, porn, violence, etc, <a href="https://telegram.me/mladminbot" style="color: darkorange">
-                <b>Report</b>
-              </a>
-              </details>
-              <br/>
-    </footer>
+    <div class="containerbox"> 
+        <div style="margin-bottom: 5px; margin-top: 10px">Stream Options :</div>
+        <div id="button-container1">
+            <button id="vlc-btn" onclick="playOnline()">
+                <img src="https://i.ibb.co/GtnGhBV/videolan-vlc-logo-icon-170258.png" alt="vlc_logo" width="110px" height="40px"/>
+            </button>
+            <button id="mx-btn" onclick="playOnlineMx()"><img src="https://i.ibb.co/djV3Fn8/mxlogo.png" alt="mx_logo" width="120px">
+            </button>
+	    <button id="mx-btn" onclick="playOnlinejp()"><img src="https://i.ibb.co/kxp2dzx/jplayer.png" alt="j_logo" width="150px">
+            </button>
+        </div>
+        <div style="margin-bottom: 5px; margin-top: 5px"></div>
+        <div id="button-container1" class="dropdown">
+          <button id="op-btn" class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Other Players
+          <span class="caret"></span></button>
+          <ul class="dropdown-menu">
+            <li><a href="#" onclick="playOnlinesp()">S Player</a></li>
+            <li><a href="#" onclick="playOnlinepi()">Play it</a></li>
+            <li><a href="#" onclick="playOnlinens()">Ns player</a></li>
+            <li><a href="#" onclick="playOnlinehd()">Hd player (4K)</a></li>
+	    <li><a href="#" onclick="playOnlinexp()">X player</a></li>
+            <li><a href="#" onclick="playOnlinekm()">KM player</a></li>
+          </ul>
+        </div>
 
-    <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
+<br>
+<br>
+    	</div>
+        <div style="margin-bottom: 5px; margin-top: 10px">Download Options :</div>
+        <div id="button-container2">
+            <button id="tgfile-btn" onclick="openModalTG()">
+                <i class="fab fa-telegram"></i> Get as Telegram File
+            </button>
+        </div>
+        <div id="button-container2">
+            <button id="dl-btn" onclick="openModals1()">
+                <i class="fas fa-download"></i> Download File
+            </button>
+        </div>
+        <div id="button-container2">
+            <button class="block" id="tg-btn" onclick="openTgBot()">
+                <i class="fab fa-telegram"></i> Create Link Like This
+            </button>
+            <button class="block" id="share-btn">
+                <i class="fa fa-share-alt" aria-hidden="true"></i> Share Now
+            </button>
+        </div>
+        </div>
+        <script src="https://vjs.zencdn.net/8.6.1/video.min.js"></script>
+        <script>
+          const player = videojs('#player', {
+            controls: true,
+            aspectRatio: "16:9",
+            playbackRates: [0.25, 0.5, 0.75, 1, 1.25, 1.5, 1.75, 2],
+            poster: "https://cdn.jsdelivr.net/npm/@googledrive/index@2.2.3/images/poster.jpg",
+          });
+        </script>
+        </div>    
+        <div>
+<script>
+    const finalUrl = 'https://streamapi.mrfooll.xyz/2139944/Munjya+%282024%29+Hindi+HDRip++x264+AAC+700MB.mkv?hash=AgADTR';
+    const skey = `api/dl/AgADTR2139944`;
+
+    function playOnline() {
+        const finalLinkUrl = finalUrl;
+        const vlcUrl = `vlc://${finalLinkUrl}`;
+        window.location.href = vlcUrl;
+    }
+
+    function playOnlineMx() {
+        const finalLinkUrl = finalUrl;
+	const mxUrl = `intent:${finalLinkUrl}#Intent;package=com.mxtech.videoplayer.ad;end`;
+        window.location.href = mxUrl;
+    }
+    
+    function playOnlinesp() {
+        const finalLinkUrl = finalUrl;
+        const spUrl = `intent:${finalLinkUrl}#Intent;action=com.young.simple.player.playback_online;package=com.young.simple.player;end`;
+        window.location.href = spUrl;
+    }
+    
+    function playOnlinepi() {
+        const finalLinkUrl = finalUrl;
+        const piUrl = `playit://playerv2/video?url=${finalLinkUrl}&amp;title=Munjya (2024) Hindi HDRip  x264 AAC 700MB.mkv`;
+        window.location.href = piUrl;
+    }
+    
+    function playOnlinehd() {
+        const finalLinkUrl = finalUrl;
+        const hdUrl = `intent:${finalLinkUrl}#Intent;package=uplayer.video.player;end`;
+        window.location.href = hdUrl;
+    }
+
+    function playOnlinejp() {
+        const finalLinkUrl = finalUrl;
+        const jpUrl = `intent:${finalLinkUrl}#Intent;package=com.qp.jplayer;end`;
+        window.location.href = jpUrl;
+    }
+	
+    function playOnlinekm() {
+        const finalLinkUrl = finalUrl;
+        const kmUrl = `intent:${finalLinkUrl}#Intent;package=com.kmplayer;end`;
+        window.location.href = kmUrl;
+    }
+
+    function playOnlinexp() {
+        const finalLinkUrl = finalUrl;
+        const xpUrl = `intent:${finalLinkUrl}#Intent;package=video.player.videoplayer;end`;
+        window.location.href = xpUrl;
+    }
+	
+    function playOnlinens() {
+        const finalLinkUrl = finalUrl;
+        const tempInput = document.createElement('input');
+        tempInput.value = finalLinkUrl;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempInput);
+        alert('Stream link copied to clipboard, paste the link in Media stream URL box in ns player');
+    }
+
+    function openTgBot() {
+        const createLinkUrl = "https://telegram.dog/LCU_Filetolinkbot";
+        window.open(createLinkUrl, "_blank");
+    }
+
+    function openModalTG() {
+        const modal = document.getElementById('loadingModal');
+        modal.style.display = 'flex';
+
+        setTimeout(function () {
+            modal.style.display = 'none';
+            TGre();
+        }, 4000);
+    }
+
+    function TGre() {
+        const tglink = "https://fs.mrfooll.xyz/?=33836_V3";
+        window.location.href = tglink;
+    }
+    function openModals1() {
+        const modal = document.getElementById('loadingModal');
+        modal.style.display = 'flex';
+
+        setTimeout(function () {
+            modal.style.display = 'none';
+            downloads1();
+        }, 4000);
+    }
+
+    function downloads1() {
+        const s1url = 'https://player1.mrfooll.xyz/' + skey;
+        window.location.href = s1url;
+    }
+</script>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const videoElement = document.querySelector('.plyr');
-            new Plyr(videoElement);
+        document.addEventListener('DOMContentLoaded', function () {
+            const shareButton = document.getElementById('share-btn');
+
+            if (navigator.share) {
+                shareButton.addEventListener('click', () => {
+                    const currentURL = window.location.href;
+                    const currentTitle = document.title;
+                    navigator.share({
+                        title: currentTitle,
+                        text: 'Hey! link for the movie! Powered by LCUBOTS',
+                        url: currentURL
+                    })
+                    .then(() => console.log('Shared successfully'))
+                    .catch(error => console.error('Error sharing:', error));
+                });
+            } else {
+                shareButton.addEventListener('click', () => {
+                    alert('Sharing not supported in this browser. You can manually share the content or use chrome browser.');
+                });
+            }
         });
+    </script>   
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const dlButton = document.querySelector('#button-container2 button#dl-btn');
+      const shareButton = document.querySelector('#button-container2 button#share-btn');
+      const tgfileButton = document.querySelector('#button-container2 button#tgfile-btn');
+      const tgButton = document.querySelector('#button-container2 button#tg-btn');
+      
+      const buttons = [dlButton, shareButton, tgfileButton, tgButton];
 
-        const currentUrl = window.location.href;
-        const finalUrl = currentUrl.replace("/watch/", "/dl/");
+      const colors = [
+        { r: 33, g: 213, b: 252 }, 
+        { r: 229, g: 33, b: 252 }  
+      ];
+      let steps = 100; 
+      buttons.forEach(button => {
+        let currentIndex = 0;
+        let nextIndex = 1;
+        let gradientColor = { r: 33, g: 213, b: 252 }; 
 
-        function playOnline(player) {
-            const playerUrls = {
-                vlc: `vlc://${finalUrl}`,
-                mxp: `intent:${finalUrl}#Intent;package=com.mxtech.videoplayer.pro;end`,
-                mx: `intent:${finalUrl}#Intent;package=com.mxtech.videoplayer.ad;end`,
-                np: `nplayer-${finalUrl}`,
-                sp: `intent:${finalUrl}#Intent;action=com.young.simple.player.playback_online;package=com.young.simple.player;end`,
-                km: `intent:${finalUrl}#Intent;package=com.kmplayer;end`
-            };
-            window.location.href = playerUrls[player] || finalUrl;
+        function updateGradientColor() {
+          const currentColor = colors[currentIndex];
+          const nextColor = colors[nextIndex];
+          gradientColor.r += (nextColor.r - currentColor.r) / steps;
+          gradientColor.g += (nextColor.g - currentColor.g) / steps;
+          gradientColor.b += (nextColor.b - currentColor.b) / steps;
+          button.style.background = `linear-gradient(to right, rgb(${gradientColor.r},${gradientColor.g},${gradientColor.b}), rgb(${nextColor.r},${nextColor.g},${nextColor.b}))`;
+          if (Math.abs(gradientColor.r - nextColor.r) < 1 && Math.abs(gradientColor.g - nextColor.g) < 1 && Math.abs(gradientColor.b - nextColor.b) < 1) {
+            currentIndex = nextIndex;
+            nextIndex = (nextIndex + 1) % colors.length;
+          }
         }
 
-        function download() {
-            window.location.href = finalUrl;
-        }
+        setInterval(updateGradientColor, 50);
+      });
+    });
+  </script>
+<script disable-devtool-auto='true' src=   
+  'https://cdn.jsdelivr.net/npm/disable-devtool' clear-log='true'   
+  disable-select='true' disable-copy='true' disable-cut='true'   
+  disable-paste='true'></script> 	
+<script>
+    document.addEventListener('contextmenu', function (e) {
+        e.preventDefault();
+    });
 
-        function copyLink() {
-            navigator.clipboard.writeText(finalUrl)
-                .then(() => {
-                    const feedback = document.createElement('div');
-                    feedback.className = 'feedback';
-                    feedback.textContent = "📋 Link copied to clipboard!";
-                    feedback.setAttribute("role", "alert");
-                    document.body.appendChild(feedback);
-                    setTimeout(() => feedback.remove(), 3000);
-                })
-                .catch(err => console.error('Could not copy text: ', err));
+    document.addEventListener('keydown', function (e) {
+        if (
+            e.key === 'F12' ||
+            (e.ctrlKey && e.shiftKey && e.key === 'I') ||
+            (e.ctrlKey && e.key === 'u') ||
+            e.ctrlKey ||
+            e.shiftKey ||
+            e.altKey
+        ) {
+            e.preventDefault();
         }
-    </script>
+    });
+</script>	
+	
+
+
+</div>
+   
+<footer>
+    <p style="font-size: 15px; padding-top: 30px ;margin:0px 10px; border-top: 1px solid #c2cee3;">
+	<b>WE DONT HOST ANY FILES ON OUR SERVER AND DONT OWN ANY COPYRIGHT FOR FILE, SO NO DMCA COMPLAINT IS VALID ON US!!</b><br>
+        This website only provide service that help you convert your Telegram File to Online Streaming.<br>
+        You can report the file/video that contains a problem like copyright, 18+, violence, etc.,please send link , we will take required action. Mail to <a href="/cdn-cgi/l/email-protection#086c656b6948657a6e6767646426707172" style="color: darkorange"><b><span class="__cf_email__" data-cfemail="c4a0a9a7a584a9b6a2ababa8a8eabcbdbe">[email&#160;protected]</span></b></a>
+    <p style="text-align:center">&copy; LCU BOTS PROJECT</p>
+</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdn.jsdelivr.net/npm/adblock-detector@2.1.0/lib/index.min.js"></script>
+</footer>
 </body>
 </html>
