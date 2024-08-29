@@ -32,9 +32,9 @@ class Var(object):
     FQDN = str(getenv('FQDN', BIND_ADRESS)) if not ON_HEROKU or getenv('FQDN') else APP_NAME+'.herokuapp.com'
     HAS_SSL=bool(getenv('HAS_SSL', True))
     if HAS_SSL:
-        URL = "https://muddy-elsey-filestorebott-9bbd5f97.koyeb.app/".format(FQDN)
+        URL = "https://movieloverzz-81ab03554108.herokuapp.com/".format(FQDN)
     else:
-        URL = "http://muddy-elsey-filestorebott-9bbd5f97.koyeb.app/".format(FQDN)
+        URL = "https://movieloverzz-81ab03554108.herokuapp.com/".format(FQDN)
     DATABASE_URL = str(getenv('DATABASE_URL', ''))
     UPDATES_CHANNEL = str(getenv('UPDATES_CHANNEL', 'Movie_loverzz'))
     BANNED_CHANNELS = list(set(int(x) for x in str(getenv("BANNED_CHANNELS", "")).split()))
