@@ -69,7 +69,7 @@ async def private_receive_handler(c: Client, m: Message):
                     chat_id=m.chat.id,
                     text="You are banned!\n\n  **Contact Developer [Rahul](https://telegram.me/CodeXBro) he will help you.**",
                     
-                    disable_web_page_preview=True
+                    disable_web_page_preview=False
                 )
                 return 
         except UserNotParticipant:
@@ -92,7 +92,7 @@ async def private_receive_handler(c: Client, m: Message):
                 chat_id=m.chat.id,
                 text="**sᴏᴍᴇᴛʜɪɴɢ ᴡᴇɴᴛ ᴡʀᴏɴɢ. ᴄᴏɴᴛᴀᴄᴛ ᴍʏ [ʙᴏss](https://telegram.me/mladminbot)**",
                 
-                disable_web_page_preview=True)
+                disable_web_page_preview=False)
             return
     try:
         log_msg = await m.forward(chat_id=Var.BIN_CHANNEL)
@@ -115,7 +115,7 @@ async def private_receive_handler(c: Client, m: Message):
         k=await m.reply_text(
             text=msg_text.format(get_name(log_msg), humanbytes(get_media_file_size(m)), stream_link, online_link),
             quote=True,
-            disable_web_page_preview=True,
+            disable_web_page_preview=False,
             reply_markup=InlineKeyboardMarkup([
                 [InlineKeyboardButton("ꜱᴛʀᴇᴀᴍ  🖥️", url=stream_link),
                  InlineKeyboardButton('📥  ᴅᴏᴡɴʟᴏᴀᴅ  📥', url=online_link)]]))
@@ -172,7 +172,7 @@ async def channel_receive_handler(bot, broadcast):
         await asyncio.sleep(w.x)
         await bot.send_message(chat_id=Var.BIN_CHANNEL,
                              text=f"GOT FLOODWAIT OF {str(w.x)}s FROM {broadcast.chat.title}\n\n**CHANNEL ID:** `{str(broadcast.chat.id)}`",
-                             disable_web_page_preview=True)
+                             disable_web_page_preview=False)
     except Exception as e:
         await bot.send_message(chat_id=Var.BIN_CHANNEL, text=f"**#ERROR_TRACKEBACK:** `{e}`", disable_web_page_preview=True)
         print(f"Cᴀɴ'ᴛ Eᴅɪᴛ Bʀᴏᴀᴅᴄᴀsᴛ Mᴇssᴀɢᴇ!\nEʀʀᴏʀ:  **Give me edit permission in updates and bin Channel!{e}**")
